@@ -10,7 +10,6 @@ import Text from "../src/components/Text/Text";
 function App() {
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({ title: "", body: "" });
-  const [payload, setPayload] = useState();
 
   console.log(show, notification);
 
@@ -22,7 +21,7 @@ function App() {
         body: payload.notification.body,
       });
       console.log(payload);
-      setPayload(payload);
+     
     })
     .catch((err) => console.log("failed: ", err));
 
@@ -37,7 +36,6 @@ function App() {
         <></>
       )}
       <Notifications />
-      <p>{payload}</p>
       <Text />
       <Fader text="Notification from firebase"></Fader>
     </div>
